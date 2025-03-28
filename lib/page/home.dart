@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "ahmet",
+                  widget.email.substring(0, 5) == "ahmet" ? "yaman" : "ahmet",
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -72,7 +72,14 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               ZegoUIKitPrebuiltCallInvitationService().send(
                 resourceID: "yaman",
-                invitees: [ZegoCallUser("333", "yaman")],
+                invitees: [
+                  ZegoCallUser(
+                    widget.email.substring(0, 5) == "ahmet"
+                        ? "123456"
+                        : "1234567",
+                    widget.email.substring(0, 5) == "ahmet" ? "yaman" : "ahmet",
+                  ),
+                ],
                 isVideoCall: false,
               );
             },
@@ -82,7 +89,14 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               ZegoUIKitPrebuiltCallInvitationService().send(
                 resourceID: "yaman",
-                invitees: [ZegoCallUser("333", "yaman")],
+                invitees: [
+                  ZegoCallUser(
+                    widget.email.substring(0, 5) == "ahmet"
+                        ? "123456"
+                        : "1234567",
+                    widget.email.substring(0, 5) == "ahmet" ? "yaman" : "ahmet",
+                  ),
+                ],
                 isVideoCall: false,
               );
             },
